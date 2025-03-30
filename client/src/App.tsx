@@ -21,7 +21,7 @@ function App() {
 
   const joinRoom = (e  :any)=>{
     e.preventDefault()
-    socket.emit('join-room' , {room : newRoom})
+    socket.emit('join-room' , newRoom)
     setNewRooom("")
   }
 
@@ -53,7 +53,7 @@ function App() {
 
   return (
     <div className=' flex justify-center items-center bg-green-200 h-screen w-[100vw] '>
-      <div className =' flex-col space-y-10 bg-red-200 backdrop-blur-3xl justify-between border-2 border-black p-10 rounded-lg'>
+      <div className =' flex-col space-y-10 bg-red-200 backdrop-blur-3xl  shadow-[6px_6px_0px_black] shadow- shadow-black justify-between border-2 border-black p-10 rounded-lg'>
       <h1 className='text-black font-bold'>{socketId}</h1>
 
       <form className=' flex  space-x-4'> 
@@ -64,7 +64,7 @@ function App() {
           className = 'border-2 border-black rounded-lg '
           onChange={(e) => setNewRooom(e.target.value)}
          /> 
-        <button type='submit' className='bg-blue-500 rounded-md p-3' onClick={joinRoom}>
+        <button type='submit' className='bg-blue-500 rounded-md p-3 shadow-[6px_6px_0px_black] active:translate-x-0.5 active:shadow-[2px_2px_0px_black]' onClick={joinRoom}>
           Join Room
         </button>
 
@@ -75,7 +75,7 @@ function App() {
         <input 
           type = "text"
           value={message}
-          className='w-40 outline-black border-2 border-black mr-3'
+          className='w-40  border-2 bg-green-400 border-black mr-3 focus:outline-blue-500'
           onChange={(e)=> setMessage(e.target.value)}
         /> 
         <input 
