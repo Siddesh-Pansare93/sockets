@@ -30,6 +30,7 @@ io.on('connection' , (socket)=>{
         
         socket.join(room)
         console.log("joined room : " , room)
+        console.log("socket rooms " , socket.rooms)
     })
 
     socket.on('disconnect' , ()=> {
